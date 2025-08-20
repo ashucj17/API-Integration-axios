@@ -6,6 +6,7 @@ import Articles from './Component/Articles/Articles'
 import Admin from './Component/Admin/Admin'
 import Contact from './Component/Contact/Contact'
 import NotFound from './Component/NotFound/NotFound'
+import SingleProducts from './Component/Products/SingleProducts'
 import './App.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<Products />} />
+          <Route path='/products/:id' element={<SingleProducts />} />
           <Route path='/articles' element={<Articles />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/contact' element={<Contact />} />
