@@ -4,6 +4,8 @@ import Home from './Component/Home/Home'
 import Products from './Component/Products/Products'
 import Articles from './Component/Articles/Articles'
 import Admin from './Component/Admin/Admin'
+import Contact from './Component/Contact/Contact'
+import NotFound from './Component/NotFound/NotFound'
 import './App.css'
 
 function App() {
@@ -16,10 +18,13 @@ function App() {
 
       <main className='app_main'>
         <Routes>
-          <Route path='/' element={<Home />} / >
-          <Route path='/products' element={<Products />} / >
-          <Route path='/articles' element={<Articles />} / >
-          <Route path='/Admin' element={<Admin />} / >
+          <Route path='/' element={<Home />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/articles' element={<Articles />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
       </div>

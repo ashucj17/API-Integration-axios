@@ -9,3 +9,12 @@ ul{
  li{
         margin-bottom: 15px;
 }
+
+a{
+    color: red;
+}
+
+a.active{
+    font-weight: 500;
+    color: blue;
+}
