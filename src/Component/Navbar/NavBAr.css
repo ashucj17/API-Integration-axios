@@ -1,0 +1,11 @@
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #dededd;
+}
+
+ li{
+        margin-bottom: 15px;
+}
