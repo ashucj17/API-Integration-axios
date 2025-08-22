@@ -7,7 +7,7 @@ import Admin from './Component/Admin/Admin'
 import Contact from './Component/Contact/Contact'
 import NotFound from './Component/NotFound/NotFound'
 import SingleProducts from './Component/Products/SingleProducts'
-import './App.css'
+import './index.css'
 
 function App() {
 
