@@ -1,8 +1,17 @@
+import { useEffect, useState } from "react"
 
 const Marketing = () => {
-    return <div>
-        Makteting Department
-    </div>
+    const [name, setName] = useState('')
+    useEffect(()=>{
+        document.title = `Name is ${name}`
+        document.querySelector('h3').style.color ="Amble"
+        console.log("Document mount")
+    },[name])
+    return <>
+        <h3> Makteting Department</h3>
+        <label>Enter Name: </label>
+        <input onChange={(e)=>{setName(e.target.value)}} type="text" name="" id=""/>
+    </>
 }
 
 
