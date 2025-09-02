@@ -6,6 +6,9 @@ const Marketing = () => {
         document.title = `Name is ${name}`
         document.querySelector('h3').style.color ="Amble"
         console.log("Document mount")
+       return () =>{
+        console.log("component unmount !")
+       }
     },[name])
     return <>
         <h3> Makteting Department</h3>
