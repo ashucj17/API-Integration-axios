@@ -15,7 +15,9 @@ const Marketing = () => {
 
     const [users,setUsers] = useState([])
 
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+
+    const [errors, setErrors] = useState("")
 
     useEffect(()=>{
         setIsLoading(true)
@@ -24,9 +26,9 @@ const Marketing = () => {
         .then((res)=>{setUsers(res.data);
         setIsLoading(false)
         })
-        .catch((error)=>{
-            console.log(error)
-        })
+        .catch((err)=> {setErrors(err.message);
+        setIsLoading(false);}
+    )
 
     },[])
 
@@ -35,6 +37,7 @@ const Marketing = () => {
         <label>Enter Name: </label>
         <input onChange={(e)=>{setName(e.target.value)}} type="text" name="" id=""/>
         {isLoading && <Loader />}
+        {errors && <em>{errors}</em>}
         {users.map((user)=> (
             <p key={user.id}>{user.name}</p>
         ))}
