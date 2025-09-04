@@ -1,6 +1,6 @@
+import Loader from "../Common/Loader"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import Loader from "../Common/Loader"
 
 const Marketing = () => {
     // const [name, setName] = useState('')
@@ -20,17 +20,33 @@ const Marketing = () => {
     const [errors, setErrors] = useState("")
 
     useEffect(()=>{
-        setIsLoading(true)
-        axios
-        .get('https://jsonplaceholder.typicode.com/users')
-        .then((res)=>{setUsers(res.data);
-        setIsLoading(false)
-        })
-        .catch((err)=> {setErrors(err.message);
-        setIsLoading(false);}
-    )
+        fetchUser();
+    //     setIsLoading(true)
+    //     axios
+    //     .get('https://jsonplaceholder.typicode.com/users')
+    //     .then((res)=>{setUsers(res.data);
+    //     setIsLoading(false)
+    //     })
+    //     .catch((err)=> {setErrors(err.message);
+    //     setIsLoading(false);}
+    // )
 
     },[])
+
+    const fetchUser = async () =>{
+        try{
+        setIsLoading(true)
+        const res = await axios
+        .get('https://jsonplaceholder.typicode.com/users')
+        setUsers(res.data);
+        setIsLoading(false)
+        } catch (err) {
+                    setErrors(err.message);
+        setIsLoading(false);
+        } finally {
+            console.log("Are you good !!")
+        }
+    }
 
     return <>
         <h3> Marketing Department</h3>
